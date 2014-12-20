@@ -23,9 +23,15 @@ TARGETS_FOR_DEVICE += TARGET_FF_MORPHO TARGET_F407VG
 GCC_DEFINES := $(patsubst %,-D%,$(TARGETS_FOR_DEVICE))
 GCC_DEFINES += -D__CORTEX_M4 -DARM_MATH_CM4 -D__FPU_PRESENT=1
 
+<<<<<<< HEAD
 C_FLAGS   := -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=softfp -mthumb-interwork
 ASM_FLAGS := -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=softfp
 LD_FLAGS  := -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=softfp
+=======
+C_FLAGS   := -mcpu=cortex-m4 -mthumb -mthumb-interwork -mfpu=fpv4-sp-d16 -mfloat-abi=softfp -fsingle-precision-constant
+ASM_FLAGS := -mcpu=cortex-m4 -mthumb -mthumb-interwork -mfpu=fpv4-sp-d16 -mfloat-abi=softfp -fsingle-precision-constant
+LD_FLAGS  := -mcpu=cortex-m4 -mthumb
+>>>>>>> 03eb9df983eb8ef1cb4820e56b68316ff3dc3404
 
 
 # Extra platform specific object files to link into file binary.
